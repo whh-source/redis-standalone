@@ -26,6 +26,18 @@ public class RedisServiceTest {
         String value = redisService.get("test");
         Assert.assertEquals(value, "this string");
 
+        ret = redisService.set("test", "asdf");
+        Assert.assertTrue(ret);
+
+        value = redisService.get("test");
+        Assert.assertEquals(value, "asdf");
+
+        ret = redisService.set("test", "dddd");
+        Assert.assertTrue(ret);
+
+        value = redisService.get("test");
+        Assert.assertEquals(value, "dddd");
+
         log.info("test value:{}", value);
     }
 }

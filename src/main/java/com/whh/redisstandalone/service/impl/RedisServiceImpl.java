@@ -17,8 +17,9 @@ import java.util.concurrent.TimeUnit;
 @Slf4j
 @Service
 public class RedisServiceImpl implements RedisService {
+
     @Autowired
-    RedisTemplate<String, Object> redisTemplate;
+    RedisTemplate<Object, Object> redisTemplate;
 
     @PostConstruct
     public void init(){
